@@ -1,16 +1,16 @@
 {
-  "name": "react-boilerplate",
+  "name": "cheese-nerd",
   "version": "3.0.0",
-  "description": "A highly scalable, offline-first foundation with the best DX and a focus on performance and best practices",
+  "description": "",
   "repository": {
     "type": "git",
-    "url": "git://github.com/mxstbr/react-boilerplate.git"
+    "url": "git://github.com/marcdel/cheese-nerd.git"
   },
   "engines": {
     "npm": ">=3"
   },
-  "author": "Max Stoiber",
-  "license": "MIT",
+  "author": "Marc Delagrammatikas",
+  "license": "GNU AGPLv3",
   "scripts": {
     "analyze": "node ./internals/scripts/analyze.js",
     "npmcheckversion": "node ./internals/scripts/npmcheckversion.js",
