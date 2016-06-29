@@ -1,7 +1,6 @@
 {
   "name": "cheese-nerd",
   "scripts": {
-    "postdeploy": "npm run build"
   },
   "env": {
     "NPM_CONFIG_PRODUCTION": {
