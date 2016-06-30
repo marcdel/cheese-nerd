@@ -7,6 +7,13 @@ node_js:
 services:
   - docker
 
+addons:
+  code_climate:
+    repo_token: ${CODECLIMATE_REPO_TOKEN}
+
 before_install:
   - docker build -t cheese-nerd:dev -f ./src/config/.DevDockerfile .
   - docker run cheese-nerd:dev gluestick test -S
+
+after_script:
+  - codeclimate-test-reporter < lcov.info
