@@ -52,5 +52,11 @@ module.exports = {
     image : 'http://www.cheese.com/media/img/cheese/Greek_Feta_1.jpg',
     desc : 'To create traditional feta, 30 percent goat\'s milk is mixed with sheep\'s milk of animals grazing on pastures in the specific appellation of origin regions.',
     rating : 9
+  },
+  cheese10 : {
+    name : 'Gruyere',
+    image : 'http://www.cheese.com/media/img/cheese/gruyere_switzerland.jpg',
+    desc : 'Gruyere is named after a Swiss village. It is traditional, creamery, unpasteurised, semi-soft cheese.',
+    rating : 6
   }
 };

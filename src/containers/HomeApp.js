@@ -23,11 +23,19 @@ export class HomeApp extends Component {
    */
   static gsBeforeRoute (/* {dispatch}, renderProps, query, serverProps */) {}
 
+  constructor(){
+    super();
+
+    this.state = {
+      cheeses: require('../sample-cheeses')
+    };
+  }
+
   render () {
     return (
       <div>
         <Helmet title="Home"/>
-        <Home />
+        <Home cheeses={this.state.cheeses} />
       </div>
     );
   }
@@ -37,4 +45,3 @@ export default connect(
   (/* state */) => ({/** _INSERT_STATE_  **/}),
   (dispatch) => bindActionCreators({/** _INSERT_ACTION_CREATORS_ **/}, dispatch)
 )(HomeApp);
-
