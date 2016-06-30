@@ -1,11 +1,11 @@
 {
-  "name": "AppName",
-  "version": "1.0.0",
+  "name": "cheese-nerd",
+  "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
     "start": "gluestick start",
-    "test": "echo \"Run tests via `gluestick test`\" && exit 0"
+    "test": "echo \"Run tests via gluestick test\" && exit 0"
   },
   "dependencies": {
     "axios": "0.12.0",
