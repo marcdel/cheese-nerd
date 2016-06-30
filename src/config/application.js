@@ -3,9 +3,9 @@
 
 const headContent = {
   title: "My Gluestick App",
-  titleTemplate: "%s | Gluestick Application",
+  titleTemplate: "%s | Cheese Nerd",
   meta: [
-    {name: "description", content: "Gluestick application"}
+    {name: "description", content: "Cheese Nerd"}
   ]
 };
 
@@ -26,4 +26,3 @@ const config = {
 };
 
 export default (config[process.env.NODE_ENV] || config["development"]);
-
