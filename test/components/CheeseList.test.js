@@ -1,8 +1,11 @@
-import Home from "components/Home";
+/*global React*/
+/*global describe it*/
+/*global expect*/
+import CheeseList from "components/CheeseList";
 import { shallow } from "enzyme";
 
-describe("components/Home", () => {
-    const testCheeses = {
+describe("components/CheeseList", () => {
+  const testCheeses = {
     cheese1 : {
       name : 'Cheese 1',
       image : 'image.jpg',
@@ -12,8 +15,8 @@ describe("components/Home", () => {
   };
 
   it("renders without an issue", () => {
-    const subject = <Home cheeses={testCheeses} />;
+    const subject = <CheeseList cheeses={testCheeses} />;
     const wrapper = shallow(subject);
     expect(wrapper).to.exist;
-  });;
+  });
 });
