@@ -1,12 +1,14 @@
 /* @flow */
 import React, { Component } from "react";
 
+import Cheese from "./Cheese";
+
 export default class CheeseList extends Component {
   renderCheese(key){
     var cheese = this.props.cheeses[key];
 
     return (
-      <li key={key}>{cheese.name}</li>
+      <Cheese cheese={cheese} />
     );
   }
 
