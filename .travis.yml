@@ -1,19 +1,17 @@
 sudo: required
-
 language: node_js
 node_js:
-  - "5.4"
-
+- '5.4'
 services:
-  - docker
-
+- docker
 addons:
   code_climate:
-    repo_token: ${CODECLIMATE_REPO_TOKEN}
-
+    repo_token: "${CODECLIMATE_REPO_TOKEN}"
 before_install:
-  - docker build -t cheese-nerd:dev -f ./src/config/.DevDockerfile .
-  - docker run cheese-nerd:dev gluestick test -S
-
+- docker build -t cheese-nerd:dev -f ./src/config/.DevDockerfile .
+- docker run cheese-nerd:dev gluestick test -S
 after_script:
-  - codeclimate-test-reporter < lcov.info
+- codeclimate-test-reporter < lcov.info
+notifications:
+  slack:
+    secure: HPJ2SPy/RSd6QvdQtAGw1IzefDrBILr/Cw/1h2lNLD1hhpZt+Qcg4Fg6JejjSd4vL0/48AVfWiE6IoZtb+FGnFoRY/Hq9LX7hSx7jVrQHQIwjRvPnsNWpSEM20xr/GxuCFV/iEV61wrRVPQiOWI93KKZE6Gk6qeFnsh7Uy9o8AgQIMg+Ij9KK9DDO3J7VgwI7hUE/p3qOygR1DpGS29qfirxH7Pj83DAJFN6OZqfOOaxF435uVHL45KjkdApKv+WjVlzRjLZTVCOdGtxZXaD2HZC2gLwtSfUUz2ITXM3KFat+gYEW8uozZhSO9NRXZ141fWI07yzVy0BYqSQIYzwPPDKvrvkXopuwwJEgigI9BnDPKNXv80Ybjrdq2KsoQdC93UU9/gcxv/rGQPO+N07KrLtHMOZo0KX7h1EXvKk/vHO4lp8aQEiSbX7tS6JLyULNOJGWgezGDTiJRcLxK4mmIPb21nnd5YuHI/KeJ4sYe4HRxr5/ftSjRI/C/VK/FAvuWLs/TT8LdQU5TGu6MWWp3aqqAPIoyfEN8Cxho6jWsyG6hGMye4MYL5nSnvP+BEMVJfGy1C02Z4thkYh5ZhfMAhIHY/MYZSYibImmg/2bEYwJPe4Afj3TJc/jLwTlcTZkJYuv/1OjzRiH/lpELsSVuuGM+zP1rnZyRUnYSN545A=
