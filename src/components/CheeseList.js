@@ -8,16 +8,14 @@ export default class CheeseList extends Component {
     var cheese = this.props.cheeses[key];
 
     return (
-      <Cheese cheese={cheese} />
+      <Cheese key={key} cheese={cheese} />
     );
   }
 
   render () {
     return (
       <div>
-        <ul>
-          {Object.keys(this.props.cheeses).map(this.renderCheese.bind(this))}
-        </ul>
+        {Object.keys(this.props.cheeses).map(this.renderCheese.bind(this))}
       </div>
     );
   }
