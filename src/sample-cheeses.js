@@ -7,8 +7,8 @@ module.exports = {
   },
   cheese2 : {
     name : 'Brie',
-    image : 'http://i.istockimg.com/file_thumbview_approve/32135274/5/stock-photo-32135274-cooked-lobster.jpg',
-    desc : 'These tender, mouth-watering beauties are a fantastic hit at any dinner party.',
+    image : 'http://www.cheese.com/media/img/cheese/Brie.jpg',
+    desc : 'Brie is a soft cheese named after the French region Brie, where it was originally created.',
     rating : 9
   },
   cheese3 : {
