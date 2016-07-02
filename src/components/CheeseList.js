@@ -2,7 +2,9 @@
 import React, { Component } from "react";
 
 import Cheese from "./Cheese";
+import autobind from 'autobind-decorator';
 
+@autobind
 export default class CheeseList extends Component {
   renderCheese(key){
     var cheese = this.props.cheeses[key];
@@ -15,7 +17,7 @@ export default class CheeseList extends Component {
   render () {
     return (
       <div>
-        {Object.keys(this.props.cheeses).map(this.renderCheese.bind(this))}
+        {Object.keys(this.props.cheeses).map(this.renderCheese)}
       </div>
     );
   }
