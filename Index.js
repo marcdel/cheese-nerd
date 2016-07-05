@@ -2,8 +2,8 @@ import React, { Component, PropTypes } from "react";
 import Helmet from "react-helmet";
 import { BodyAttributes } from "gluestick-shared";
 import "assets/css/normalize.css";
-import "assets/bootstrap/css/bootstrap.css";
-import "assets/bootstrap/css/bootstrap-responsive.css";
+import "assets/bootstrap-3.3.6-dist/css/bootstrap.css";
+import "assets/bootstrap-3.3.6-dist/css/bootstrap-theme.css";
 
 /**
  * The index html will be generated from this file. You can customize things as
