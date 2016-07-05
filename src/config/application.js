@@ -2,7 +2,7 @@
 // exposed in the client code.
 
 const headContent = {
-  title: "My Gluestick App",
+  title: "Cheese Nerd",
   titleTemplate: "%s | Cheese Nerd",
   meta: [
     {name: "description", content: "Cheese Nerd"}
