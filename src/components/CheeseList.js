@@ -1,5 +1,6 @@
 /* @flow */
 import React, { Component } from "react";
+import { Grid, Row, Col } from "react-bootstrap";
 
 import Cheese from "./Cheese";
 import autobind from 'autobind-decorator';
@@ -9,15 +10,19 @@ export default class CheeseList extends Component {
     var cheese = this.props.cheeses[key];
 
     return (
-      <Cheese key={key} cheese={cheese} />
+      <Col xs={6} md={3} key={key}>
+        <Cheese cheese={cheese} />
+      </ Col>
     );
   }
 
   render () {
     return (
-      <div>
-        {Object.keys(this.props.cheeses).map(this.renderCheese)}
-      </div>
+      <Grid>
+        <Row className="show-grid">
+          {Object.keys(this.props.cheeses).map(this.renderCheese)}
+        </Row>
+      </Grid>
     );
   }
 }

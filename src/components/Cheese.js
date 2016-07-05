@@ -1,5 +1,6 @@
 /* @flow */
 import React, { Component } from "react";
+import Radium from "radium";
 
 export default class Cheese extends Component {
   render () {
@@ -7,7 +8,7 @@ export default class Cheese extends Component {
 
     return (
       <div>
-        <img src={cheese.image} alt={cheese.name} />
+        <img style={styles.image} src={cheese.image} alt={cheese.name} />
         <h3>
           {cheese.name}
         </h3>
@@ -17,6 +18,15 @@ export default class Cheese extends Component {
   }
 }
 
+var styles = {
+  image: {
+    height: "300px",
+    width: "300px"
+  }
+};
+
 Cheese.propTypes = {
   cheese: React.PropTypes.object.isRequired
 };
+
+export default Radium(Cheese);
