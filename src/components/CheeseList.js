@@ -10,7 +10,7 @@ export default class CheeseList extends Component {
     var cheese = this.props.cheeses[key];
 
     return (
-      <Col xs={6} md={3} key={key}>
+      <Col xs={6} md={6} key={key}>
         <Cheese cheese={cheese} />
       </ Col>
     );

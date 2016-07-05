@@ -8,10 +8,10 @@ export default class Cheese extends Component {
 
     return (
       <div>
-        <img style={styles.image} src={cheese.image} alt={cheese.name} />
         <h3>
           {cheese.name}
         </h3>
+        <img style={styles.image} src={cheese.image} alt={cheese.name} />
         <p>{cheese.desc}</p>
       </div>
     );
