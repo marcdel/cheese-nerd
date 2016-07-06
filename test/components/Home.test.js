@@ -11,7 +11,7 @@ describe("components/Home", () => {
     }
   };
 
-  const filter = function(){};
+  const filter = function(){ return testCheeses; };
 
   it("renders without an issue", () => {
     const subject = <Home cheeses={testCheeses} topCheeseFilter={filter} />;
