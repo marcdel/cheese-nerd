@@ -5,14 +5,15 @@ import { ROUTE_NAME_404_NOT_FOUND } from "gluestick-shared";
 
 import MasterLayout from "components/MasterLayout";
 import HomeApp from "containers/HomeApp";
+import CheeseSearchApp from "containers/CheeseSearchApp";
 import NoMatchApp from "containers/NoMatchApp";
 
 export default function routes (/*store:Object*/) {
   return (
     <Route name="app" component={MasterLayout} path="/">
       <IndexRoute name="home" component={HomeApp} />
+      <Route name="search" path="/search" component={CheeseSearchApp} />
       <Route name={ROUTE_NAME_404_NOT_FOUND} path="*" component={NoMatchApp}/>
     </Route>
   );
 }
-
