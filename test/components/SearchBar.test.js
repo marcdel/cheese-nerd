@@ -1,12 +1,12 @@
 /*global React*/
 /*global describe it*/
 /*global expect*/
-import CheeseSearch from "components/CheeseSearch";
+import SearchBar from "components/SearchBar";
 import { shallow } from "enzyme";
 
-describe("components/CheeseSearch", () => {
+describe("components/SearchBar", () => {
   it("renders without an issue", () => {
-    const subject = <CheeseSearch searchText="" onChange={function(){}} />;
+    const subject = <SearchBar searchText="" onChange={function(){}} />;
     const wrapper = shallow(subject);
     expect(wrapper).to.exist;
   });

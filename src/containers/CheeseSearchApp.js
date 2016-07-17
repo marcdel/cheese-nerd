@@ -23,11 +23,26 @@ export class CheeseSearchApp extends Component {
    */
   static gsBeforeRoute (/* {dispatch}, renderProps, query, serverProps */) {}
 
+  constructor () {
+    super();
+
+    this.state = {
+      cheeses: require('../sample-cheeses'),
+      searchText: ''
+    };
+  }
+
+  onChange (text) {
+    this.setState({
+      searchText: text
+    });
+  }
+
   render () {
     return (
       <div>
         <Helmet title="CheeseSearchApp"/>
-        <CheeseSearch />
+        <CheeseSearch searchText={this.state.searchText} onChange={this.onChange.bind(this)} />
       </div>
     );
   }
