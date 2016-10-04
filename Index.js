@@ -13,7 +13,8 @@ import "assets/bootstrap-3.3.6-dist/css/bootstrap-theme.css";
 export default class Index extends Component {
   static propTypes = {
     head: PropTypes.any,
-    body: PropTypes.any
+    body: PropTypes.any,
+    req: PropTypes.object
   };
 
   render () {
@@ -43,3 +44,4 @@ export default class Index extends Component {
     );
   }
 }
+

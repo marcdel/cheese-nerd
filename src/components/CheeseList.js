@@ -3,7 +3,6 @@ import React, { Component } from "react";
 import { Grid, Row, Col } from "react-bootstrap";
 
 import Cheese from "./Cheese";
-import autobind from 'autobind-decorator';
 
 export default class CheeseList extends Component {
   renderCheese(key){
@@ -20,7 +19,7 @@ export default class CheeseList extends Component {
     return (
       <Grid>
         <Row className="show-grid">
-          {Object.keys(this.props.cheeses).map(this.renderCheese)}
+          {Object.keys(this.props.cheeses).map(this.renderCheese.bind(this))}
         </Row>
       </Grid>
     );
@@ -30,5 +29,3 @@ export default class CheeseList extends Component {
 CheeseList.propTypes = {
   cheeses: React.PropTypes.object.isRequired
 };
-
-export default autobind(CheeseList);

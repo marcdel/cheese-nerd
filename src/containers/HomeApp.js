@@ -3,7 +3,6 @@ import React, { Component } from "react";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import Helmet from "react-helmet";
-import autobind from 'autobind-decorator';
 
 import Home from "components/Home";
 
@@ -48,7 +47,7 @@ export class HomeApp extends Component {
     return (
       <div>
         <Helmet title="Home"/>
-        <Home cheeses={this.state.cheeses} topCheeseFilter={this.topCheeseFilter} />
+        <Home cheeses={this.state.cheeses} topCheeseFilter={this.topCheeseFilter.bind(this)} />
       </div>
     );
   }
@@ -58,5 +57,3 @@ export default connect(
   (/* state */) => ({/** _INSERT_STATE_  **/}),
   (dispatch) => bindActionCreators({/** _INSERT_ACTION_CREATORS_ **/}, dispatch)
 )(HomeApp);
-
-export default autobind(HomeApp);

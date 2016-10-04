@@ -28,5 +28,3 @@ var styles = {
 Cheese.propTypes = {
   cheese: React.PropTypes.object.isRequired
 };
-
-export default Radium(Cheese);
