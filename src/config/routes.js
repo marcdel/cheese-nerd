@@ -5,12 +5,14 @@ import { ROUTE_NAME_404_NOT_FOUND } from "gluestick-shared";
 
 import App from "containers/App";
 import HomeContainer from "containers/HomeContainer";
+import CheeseDetailContainer from "containers/CheeseDetailContainer";
 import NoMatchApp from "containers/NoMatchApp";
 
 export default function routes (/*store:Object*/) {
   return (
     <Route name="app" component={App} path="/">
       <IndexRoute name="home" component={HomeContainer} />
+      <Route name="detail" path="/cheese/:cheeseId" component={CheeseDetailContainer}/>
       <Route name={ROUTE_NAME_404_NOT_FOUND} path="*" component={NoMatchApp}/>
     </Route>
   );
