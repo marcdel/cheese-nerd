@@ -8,7 +8,7 @@ export default class Home extends Component {
     return (
       <div>
         <h2>Top Cheeses</h2>
-        <CheeseList cheeses={this.props.topCheeseFilter()} />
+        <CheeseList cheeses={this.props.cheeses} />
       </div>
     );
   }
@@ -16,5 +16,4 @@ export default class Home extends Component {
 
 Home.propTypes = {
   cheeses: React.PropTypes.object.isRequired,
-  topCheeseFilter: React.PropTypes.func.isRequired
 };

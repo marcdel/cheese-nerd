@@ -4,9 +4,10 @@ import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import Helmet from "react-helmet";
 
+import MasterLayout from "components/MasterLayout";
 import Home from "components/Home";
 
-export class HomeApp extends Component {
+export class App extends Component {
   /**
    * Called by ReactRouter before loading the container. Called prior to the
    * React life cycle so doesn't have access to component's props or state.
@@ -25,35 +26,19 @@ export class HomeApp extends Component {
 
   constructor(){
     super();
-
-    this.state = {
-      cheeses: require('../sample-cheeses')
-    };
-  }
-
-  topCheeseFilter() {
-    var cheeses = this.state.cheeses;
-    return Object.keys(cheeses).sort(function(a, b){
-      a = cheeses[a].rating;
-      b = cheeses[b].rating;
-      return ((a > b) ? -1 : ((a < b) ? 1 : 0));
-    }).slice(0, 4).reduce(function(result, key){
-      result[key] = cheeses[key];
-      return result;
-    }, {});
   }
 
   render () {
     return (
-      <div>
+      <MasterLayout>
         <Helmet title="Home"/>
-        <Home cheeses={this.state.cheeses} topCheeseFilter={this.topCheeseFilter.bind(this)} />
-      </div>
+        {this.props.children}
+      </MasterLayout>
     );
   }
 }
 
 export default connect(
-  (/* state */) => ({/** _INSERT_STATE_  **/}),
+  (state) => ({cheeses: state.cheeses}),
   (dispatch) => bindActionCreators({/** _INSERT_ACTION_CREATORS_ **/}, dispatch)
-)(HomeApp);
+)(App);

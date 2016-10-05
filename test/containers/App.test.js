@@ -1,7 +1,7 @@
-import { HomeApp } from "containers/HomeApp";
+import { App } from "containers/App";
 import { shallow } from "enzyme";
 
-describe("containers/HomeApp", () => {
+describe("containers/App", () => {
   const testCheeses = {
     cheese1 : {
       name : 'Cheese 1',
@@ -42,13 +42,13 @@ describe("containers/HomeApp", () => {
   };
 
   it("renders without an issue", () => {
-    const subject = <HomeApp />;
+    const subject = <App />;
     const wrapper = shallow(subject);
     expect(wrapper).to.exist;
   });
 
   it("renders the top 4 cheeses by rating", () => {
-    const subject = <HomeApp />;
+    const subject = <App />;
     const wrapper = shallow(subject);
     const expectedCheeses = ['cheese1', 'cheese2', 'cheese3', 'cheese4'];
     wrapper.setState({ cheeses: testCheeses });

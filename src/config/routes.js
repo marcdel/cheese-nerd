@@ -3,16 +3,15 @@ import React from "react";
 import { Route, IndexRoute } from "react-router";
 import { ROUTE_NAME_404_NOT_FOUND } from "gluestick-shared";
 
-import MasterLayout from "components/MasterLayout";
-import HomeApp from "containers/HomeApp";
+import App from "containers/App";
+import HomeContainer from "containers/HomeContainer";
 import NoMatchApp from "containers/NoMatchApp";
 
 export default function routes (/*store:Object*/) {
   return (
-    <Route name="app" component={MasterLayout} path="/">
-      <IndexRoute name="home" component={HomeApp} />
+    <Route name="app" component={App} path="/">
+      <IndexRoute name="home" component={HomeContainer} />
       <Route name={ROUTE_NAME_404_NOT_FOUND} path="*" component={NoMatchApp}/>
     </Route>
   );
 }
-
