@@ -7,6 +7,8 @@ describe("reducers/app", () => {
     const state = void 0;
     expect(
       reducer(state, {})
-    ).to.equal(null);
+    ).to.deep.equal({
+      cheeses: require('../../src/sample-cheeses')
+    });
   });
 });

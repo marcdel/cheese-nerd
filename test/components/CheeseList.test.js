@@ -20,14 +20,16 @@ describe("components/CheeseList", () => {
     }
   };
 
+  const cheeseClicked = function(cheeseId) { };
+
   it("renders without an issue", () => {
-    const subject = <CheeseList cheeses={testCheeses} />;
+    const subject = <CheeseList cheeses={testCheeses} cheeseClicked={cheeseClicked} />;
     const wrapper = shallow(subject);
     expect(wrapper).to.exist;
   });
 
   it("renders cheeses", () => {
-    const subject = <CheeseList cheeses={testCheeses} />;
+    const subject = <CheeseList cheeses={testCheeses} cheeseClicked={cheeseClicked} />;
     const wrapper = shallow(subject);
     expect(wrapper).to.exist;
     expect(wrapper.find('Cheese')).to.have.length(2);
