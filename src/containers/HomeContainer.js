@@ -23,11 +23,15 @@ export class HomeContainer extends Component {
    */
   static gsBeforeRoute (/* {dispatch}, renderProps, query, serverProps */) {}
 
+  cheeseClicked (cheeseId) {
+    this.context.router.push(`/cheese/${cheeseId}`);
+  }
+
   render () {
     return (
       <div>
         <Helmet title="HomeContainer"/>
-        <Home cheeses={this.props.cheeses} />
+        <Home cheeses={this.props.cheeses} cheeseClicked={this.cheeseClicked.bind(this)} />
       </div>
     );
   }
@@ -49,6 +53,10 @@ const mapStateToProps = (state) => {
     cheeses: topCheeseFilter(state.app.cheeses)
   }
 }
+
+HomeContainer.contextTypes = {
+  router: React.PropTypes.object.isRequired
+};
 
 export default connect(
   (state) => (mapStateToProps),

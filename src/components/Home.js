@@ -1,14 +1,14 @@
 /* @flow */
 import React, { Component } from "react";
 
-import CheeseListContainer from '../containers/CheeseListContainer';
+import CheeseList from '../components/CheeseList';
 
 export default class Home extends Component {
   render() {
     return (
       <div>
         <h2>Top Cheeses</h2>
-        <CheeseListContainer cheeses={this.props.cheeses} />
+        <CheeseList cheeses={this.props.cheeses} cheeseClicked={this.props.cheeseClicked} />
       </div>
     );
   }
@@ -16,4 +16,5 @@ export default class Home extends Component {
 
 Home.propTypes = {
   cheeses: React.PropTypes.object.isRequired,
+  cheeseClicked: React.PropTypes.func.isRequired,
 };
