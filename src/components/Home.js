@@ -1,14 +1,14 @@
 /* @flow */
 import React, { Component } from "react";
 
-import CheeseList from './CheeseList';
+import CheeseListContainer from '../containers/CheeseListContainer';
 
 export default class Home extends Component {
   render() {
     return (
       <div>
         <h2>Top Cheeses</h2>
-        <CheeseList cheeses={this.props.cheeses} />
+        <CheeseListContainer cheeses={this.props.cheeses} />
       </div>
     );
   }

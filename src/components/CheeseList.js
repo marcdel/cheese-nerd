@@ -5,11 +5,11 @@ import { Grid, Row, Col } from "react-bootstrap";
 import Cheese from "./Cheese";
 
 export default class CheeseList extends Component {
-  renderCheese(key){
+  renderCheese (key) {
     var cheese = this.props.cheeses[key];
 
     return (
-      <Col xs={6} md={6} key={key}>
+      <Col xs={6} md={6} key={key} onClick={this.props.onCheeseSelected.bind(this, key)}>
         <Cheese cheese={cheese} />
       </ Col>
     );
@@ -27,5 +27,6 @@ export default class CheeseList extends Component {
 }
 
 CheeseList.propTypes = {
-  cheeses: React.PropTypes.object.isRequired
+  cheeses: React.PropTypes.object.isRequired,
+  onCheeseSelected: React.PropTypes.func.isRequired,
 };
