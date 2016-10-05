@@ -1,6 +1,7 @@
 /* @flow */
 import React, { Component } from "react";
 import { bindActionCreators } from "redux";
+import { withRouter } from 'react-router'
 import { connect } from "react-redux";
 import Helmet from "react-helmet";
 
@@ -24,7 +25,7 @@ export class HomeContainer extends Component {
   static gsBeforeRoute (/* {dispatch}, renderProps, query, serverProps */) {}
 
   cheeseClicked (cheeseId) {
-    this.context.router.push(`/cheese/${cheeseId}`);
+    this.props.router.push(`/cheese/${cheeseId}`);
   }
 
   render () {
@@ -54,11 +55,7 @@ const mapStateToProps = (state) => {
   }
 }
 
-HomeContainer.contextTypes = {
-  router: React.PropTypes.object.isRequired
-};
-
 export default connect(
   (state) => (mapStateToProps),
   (dispatch) => bindActionCreators({/** _INSERT_ACTION_CREATORS_ **/}, dispatch)
-)(HomeContainer);
+)(withRouter(HomeContainer));
