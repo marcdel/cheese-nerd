@@ -4,7 +4,7 @@ import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import Helmet from "react-helmet";
 
-import Cheese from "components/Cheese";
+import CheeseDetail from "components/CheeseDetail";
 
 export class CheeseDetailContainer extends Component {
   /**
@@ -27,7 +27,7 @@ export class CheeseDetailContainer extends Component {
     return (
       <div>
         <Helmet title="CheeseDetailContainer"/>
-        <Cheese cheese={this.props.cheese} />
+        <CheeseDetail cheese={this.props.cheese} />
       </div>
     );
   }

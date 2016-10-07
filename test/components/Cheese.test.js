@@ -21,7 +21,7 @@ describe("components/Cheese", () => {
   it("renders the image", () => {
     const subject = <Cheese cheese={testCheese} />;
     const wrapper = shallow(subject);
-    expect(wrapper.find({ src: 'image.jpg' })).to.have.length(1);
+    expect(wrapper.find('img').props('src').src).to.equal(testCheese.image);
   });
 
   it("renders the cheese name", () => {
