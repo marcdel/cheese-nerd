@@ -5,6 +5,7 @@ import { withRouter } from 'react-router'
 import { connect } from "react-redux";
 import Helmet from "react-helmet";
 
+import { LOG_TEST, test } from '../actions/HomeActionCreators';
 import Home from "components/Home";
 
 export class HomeContainer extends Component {
@@ -25,7 +26,9 @@ export class HomeContainer extends Component {
   static gsBeforeRoute (/* {dispatch}, renderProps, query, serverProps */) {}
 
   cheeseClicked (cheeseId) {
-    this.props.router.push(`/cheese/${cheeseId}`);
+    this.props.test("Hello");
+
+    // this.props.router.push(`/cheese/${cheeseId}`);
   }
 
   render () {
@@ -57,5 +60,5 @@ const mapStateToProps = (state) => {
 
 export default connect(
   (state) => (mapStateToProps),
-  (dispatch) => bindActionCreators({/** _INSERT_ACTION_CREATORS_ **/}, dispatch)
+  (dispatch) => bindActionCreators({test}, dispatch)
 )(withRouter(HomeContainer));
