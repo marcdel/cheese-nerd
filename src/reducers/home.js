@@ -1,5 +1,5 @@
 /* @flow */
-import { LOG_TEST } from '../actions/HomeActionCreators';
+import { LOG_TEST } from '../actions/home';
 
 const INITIAL_STATE = null;
 

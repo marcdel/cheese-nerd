@@ -5,7 +5,7 @@ import { withRouter } from 'react-router'
 import { connect } from "react-redux";
 import Helmet from "react-helmet";
 
-import { LOG_TEST, test } from '../actions/HomeActionCreators';
+import { LOG_TEST, test } from '../actions/home';
 import Home from "components/Home";
 
 export class HomeContainer extends Component {
