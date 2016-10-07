@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import Radium from "radium";
 
 import CheeseTitle from "./CheeseTitle";
+import CheeseImage from "./CheeseImage";
 
 export default class Cheese extends Component {
   render () {
@@ -11,19 +12,12 @@ export default class Cheese extends Component {
     return (
       <div>
         <CheeseTitle title={cheese.name} />
-        <img style={styles.image} src={cheese.image} alt={cheese.name} />
+        <CheeseImage image={cheese.image} />
         <p>{cheese.desc}</p>
       </div>
     );
   }
 }
-
-var styles = {
-  image: {
-    height: "300px",
-    width: "300px"
-  }
-};
 
 Cheese.propTypes = {
   cheese: React.PropTypes.object.isRequired
