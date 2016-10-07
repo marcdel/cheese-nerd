@@ -21,13 +21,13 @@ describe("components/Cheese", () => {
   it("renders the image", () => {
     const subject = <Cheese cheese={testCheese} />;
     const wrapper = shallow(subject);
-    expect(wrapper.find('img').props('src').src).to.equal(testCheese.image);
+    expect(wrapper.find('img').props().src).to.equal(testCheese.image);
   });
 
   it("renders the cheese name", () => {
     const subject = <Cheese cheese={testCheese} />;
     const wrapper = shallow(subject);
-    expect(wrapper.find('h3').text()).to.equal(testCheese.name);
+    expect(wrapper.find('CheeseTitle').props().title).to.equal(testCheese.name);
   });
 
   it("renders the cheese description", () => {

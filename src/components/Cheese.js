@@ -2,15 +2,15 @@
 import React, { Component } from "react";
 import Radium from "radium";
 
+import CheeseTitle from "./CheeseTitle";
+
 export default class Cheese extends Component {
   render () {
     var cheese = this.props.cheese;
 
     return (
       <div>
-        <h3>
-          {cheese.name}
-        </h3>
+        <CheeseTitle title={cheese.name} />
         <img style={styles.image} src={cheese.image} alt={cheese.name} />
         <p>{cheese.desc}</p>
       </div>
