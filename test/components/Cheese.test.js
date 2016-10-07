@@ -33,6 +33,6 @@ describe("components/Cheese", () => {
   it("renders the cheese description", () => {
     const subject = <Cheese cheese={testCheese} />;
     const wrapper = shallow(subject);
-    expect(wrapper.find('p').text()).to.equal(testCheese.desc);
+    expect(wrapper.find('CheeseDescription').props().desc).to.equal(testCheese.desc);
   });
 });

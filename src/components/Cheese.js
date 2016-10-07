@@ -4,6 +4,7 @@ import Radium from "radium";
 
 import CheeseTitle from "./CheeseTitle";
 import CheeseImage from "./CheeseImage";
+import CheeseDescription from "./CheeseDescription";
 
 export default class Cheese extends Component {
   render () {
@@ -13,7 +14,7 @@ export default class Cheese extends Component {
       <div>
         <CheeseTitle title={cheese.name} />
         <CheeseImage image={cheese.image} />
-        <p>{cheese.desc}</p>
+        <CheeseDescription desc={cheese.desc} />
       </div>
     );
   }
