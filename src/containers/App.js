@@ -5,7 +5,6 @@ import { connect } from "react-redux";
 import Helmet from "react-helmet";
 
 import MasterLayout from "components/MasterLayout";
-import Home from "components/Home";
 
 export class App extends Component {
   /**
@@ -24,10 +23,6 @@ export class App extends Component {
    */
   static gsBeforeRoute (/* {dispatch}, renderProps, query, serverProps */) {}
 
-  constructor(){
-    super();
-  }
-
   render () {
     return (
       <MasterLayout>
@@ -39,6 +34,6 @@ export class App extends Component {
 }
 
 export default connect(
-  (state) => ({cheeses: state.cheeses}),
+  (/* state */) => ({/** _INSERT_STATE_  **/}),
   (dispatch) => bindActionCreators({/** _INSERT_ACTION_CREATORS_ **/}, dispatch)
 )(App);

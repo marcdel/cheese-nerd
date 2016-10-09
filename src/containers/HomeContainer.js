@@ -28,7 +28,7 @@ export class HomeContainer extends Component {
   cheeseClicked (cheeseId) {
     this.props.test("Hello");
 
-    // this.props.router.push(`/cheese/${cheeseId}`);
+    this.props.router.push(`/cheese/${cheeseId}`);
   }
 
   render () {
@@ -41,7 +41,7 @@ export class HomeContainer extends Component {
   }
 }
 
-const topCheeseFilter = (cheeses) => {
+export const topCheeseFilter = (cheeses) => {
   return Object.keys(cheeses).sort(function(a, b){
     a = cheeses[a].rating;
     b = cheeses[b].rating;

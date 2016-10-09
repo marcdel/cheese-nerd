@@ -1,7 +1,7 @@
 /*global React*/
 /*global describe it*/
 /*global expect*/
-import { HomeContainer } from "containers/HomeContainer";
+import { HomeContainer, topCheeseFilter } from "containers/HomeContainer";
 import { shallow } from "enzyme";
 
 describe("containers/HomeContainer", () => {
@@ -50,13 +50,10 @@ describe("containers/HomeContainer", () => {
     expect(wrapper).to.exist;
   });
 
-  xit("renders the top 4 cheeses by rating", () => {
-    const subject = <HomeContainer />;
-    const wrapper = shallow(subject);
-    wrapper.setState({ cheeses: testCheeses });
+  it("top cheese filter sorts by rating and returns top 4", () => {
+    const filteredCheeses = topCheeseFilter(testCheeses);
     const expectedCheeses = ['cheese1', 'cheese2', 'cheese3', 'cheese4'];
 
-    var cheeses = wrapper.find('Home').prop('cheeses');
-    expect(Object.keys(cheeses)).to.equal(expectedCheeses);
+    expect(Object.keys(filteredCheeses)).to.deep.equal(expectedCheeses);
   });
 });
