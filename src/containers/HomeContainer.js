@@ -34,7 +34,7 @@ export class HomeContainer extends Component {
   render () {
     return (
       <div>
-        <Helmet title="HomeContainer"/>
+        <Helmet title="Home"/>
         <Home cheeses={this.props.cheeses} cheeseClicked={this.cheeseClicked.bind(this)} />
       </div>
     );

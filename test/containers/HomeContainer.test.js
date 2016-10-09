@@ -50,6 +50,18 @@ describe("containers/HomeContainer", () => {
     expect(wrapper).to.exist;
   });
 
+  it("renders the page title", () => {
+    const subject = <HomeContainer />;
+    const wrapper = shallow(subject);
+    expect(wrapper.find('HelmetWrapper').props().title).to.equal("Home");
+  });
+
+  it("renders Home with cheeses", () => {
+    const subject = <HomeContainer cheeses={testCheeses} />;
+    const wrapper = shallow(subject);
+    expect(wrapper.find('Home').props().cheeses).to.equal(testCheeses);
+  });
+
   it("top cheese filter sorts by rating and returns top 4", () => {
     const filteredCheeses = topCheeseFilter(testCheeses);
     const expectedCheeses = ['cheese1', 'cheese2', 'cheese3', 'cheese4'];

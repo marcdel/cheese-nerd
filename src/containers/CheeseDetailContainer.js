@@ -24,10 +24,11 @@ export class CheeseDetailContainer extends Component {
   static gsBeforeRoute (/* {dispatch}, renderProps, query, serverProps */) {}
 
   render () {
+    const cheese = this.props.cheese;
     return (
       <div>
-        <Helmet title="CheeseDetailContainer"/>
-        <CheeseDetail cheese={this.props.cheese} />
+        <Helmet title={cheese.name}/>
+        <CheeseDetail cheese={cheese} />
       </div>
     );
   }

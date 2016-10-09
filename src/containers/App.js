@@ -26,7 +26,6 @@ export class App extends Component {
   render () {
     return (
       <MasterLayout>
-        <Helmet title="Home"/>
         {this.props.children}
       </MasterLayout>
     );
