@@ -25,6 +25,12 @@ export class HomeContainer extends Component {
    */
   static gsBeforeRoute (/* {dispatch}, renderProps, query, serverProps */) {}
 
+  constructor() {
+    super();
+
+    this.cheeseClicked = this.cheeseClicked.bind(this);
+  }
+
   cheeseClicked (cheeseId) {
     this.props.test("Hello");
 
@@ -35,7 +41,7 @@ export class HomeContainer extends Component {
     return (
       <div>
         <Helmet title="Home"/>
-        <Home cheeses={this.props.cheeses} cheeseClicked={this.cheeseClicked.bind(this)} />
+        <Home cheeses={this.props.cheeses} cheeseClicked={this.cheeseClicked} />
       </div>
     );
   }

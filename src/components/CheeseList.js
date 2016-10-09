@@ -5,11 +5,17 @@ import { Grid, Row, Col } from "react-bootstrap";
 import Cheese from "./Cheese";
 
 export default class CheeseList extends Component {
+  constructor() {
+    super();
+
+    this.renderCheese = this.renderCheese.bind(this);
+  }
+
   renderCheese (key) {
     var cheese = this.props.cheeses[key];
 
     return (
-      <Col xs={6} md={6} key={key} onClick={this.props.cheeseClicked.bind(this, key)}>
+      <Col xs={6} md={6} key={key} onClick={() => this.props.cheeseClicked(key)}>
         <Cheese cheese={cheese} />
       </ Col>
     );
@@ -19,7 +25,7 @@ export default class CheeseList extends Component {
     return (
       <Grid>
         <Row className="show-grid">
-          {Object.keys(this.props.cheeses).map(this.renderCheese.bind(this))}
+          {Object.keys(this.props.cheeses).map(this.renderCheese)}
         </Row>
       </Grid>
     );
