@@ -5,12 +5,12 @@ export default class CheeseTitle extends Component {
   render () {
     return (
       <h3>
-        {this.props.title}
+        {this.props.cheese.name}
       </h3>
     );
   }
 }
 
 CheeseTitle.propTypes = {
-  title: React.PropTypes.string.isRequired
+  cheese: React.PropTypes.object.isRequired
 };

@@ -5,12 +5,12 @@ export default class CheeseDescription extends Component {
   render () {
     return (
       <p>
-        {this.props.desc}
+        {this.props.cheese.desc}
       </p>
     );
   }
 }
 
 CheeseDescription.propTypes = {
-  desc: React.PropTypes.string.isRequired
+  cheese: React.PropTypes.object.isRequired
 };
