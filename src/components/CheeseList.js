@@ -1,5 +1,6 @@
 /* @flow */
 import React, { Component } from "react";
+import { Link } from 'react-router'
 import { Grid, Row, Col } from "react-bootstrap";
 
 import Cheese from "./Cheese";
@@ -15,8 +16,10 @@ export default class CheeseList extends Component {
     var cheese = this.props.cheeses[key];
 
     return (
-      <Col xs={6} md={6} key={key} onClick={() => this.props.cheeseClicked(key)}>
-        <Cheese cheese={cheese} />
+      <Col xs={6} md={6} key={key}>
+        <Link to={`/cheese/${key}`}>
+          <Cheese cheese={cheese} />
+        </Link>
       </ Col>
     );
   }
@@ -34,5 +37,4 @@ export default class CheeseList extends Component {
 
 CheeseList.propTypes = {
   cheeses: React.PropTypes.object.isRequired,
-  cheeseClicked: React.PropTypes.func.isRequired,
 };

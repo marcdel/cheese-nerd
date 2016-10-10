@@ -1,6 +1,5 @@
 /* @flow */
 import React, { Component } from "react";
-import Radium from "radium";
 
 import CheeseTitle from "./CheeseTitle";
 import CheeseImage from "./CheeseImage";

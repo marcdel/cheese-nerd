@@ -5,7 +5,7 @@ import { withRouter } from 'react-router'
 import { connect } from "react-redux";
 import Helmet from "react-helmet";
 
-import { LOG_TEST, test } from '../actions/home';
+import { test } from '../actions/home';
 import Home from "components/Home";
 
 export class HomeContainer extends Component {
@@ -25,23 +25,15 @@ export class HomeContainer extends Component {
    */
   static gsBeforeRoute (/* {dispatch}, renderProps, query, serverProps */) {}
 
-  constructor() {
-    super();
-
-    this.cheeseClicked = this.cheeseClicked.bind(this);
-  }
-
-  cheeseClicked (cheeseId) {
-    this.props.test("Hello");
-
-    this.props.router.push(`/cheese/${cheeseId}`);
+  componentWillMount () {
+    // this.props.test("Hello");
   }
 
   render () {
     return (
       <div>
         <Helmet title="Home"/>
-        <Home cheeses={this.props.cheeses} cheeseClicked={this.cheeseClicked} />
+        <Home cheeses={this.props.cheeses} />
       </div>
     );
   }
