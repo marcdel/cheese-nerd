@@ -3,9 +3,10 @@ import React, { Component } from "react";
 
 export default class CheeseImage extends Component {
   render () {
+    const cheese = this.props.cheese || {};
     return (
       <div>
-        <img style={styles.image} src={this.props.cheese.image} />
+        <img style={styles.image} src={cheese.image} />
       </div>
     );
   }

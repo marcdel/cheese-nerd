@@ -3,7 +3,9 @@ import React, { Component } from "react";
 import { Link } from 'react-router'
 import { Grid, Row, Col } from "react-bootstrap";
 
-import Cheese from "./Cheese";
+import CheeseTitle from "./CheeseTitle";
+import CheeseImage from "./CheeseImage";
+import CheeseDescription from "./CheeseDescription";
 
 export default class CheeseList extends Component {
   constructor() {
@@ -13,13 +15,15 @@ export default class CheeseList extends Component {
   }
 
   renderCheese (key) {
-    var cheese = this.props.cheeses[key];
+    const cheese = this.props.cheeses[key];
 
     return (
       <Col xs={6} md={6} key={key}>
+        <CheeseTitle cheese={cheese} />
         <Link to={`/cheese/${key}`}>
-          <Cheese cheese={cheese} />
+          <CheeseImage cheese={cheese} />
         </Link>
+        <CheeseDescription cheese={cheese} />
       </ Col>
     );
   }

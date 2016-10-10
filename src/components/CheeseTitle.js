@@ -3,9 +3,10 @@ import React, { Component } from "react";
 
 export default class CheeseTitle extends Component {
   render () {
+    const cheese = this.props.cheese || {};
     return (
       <h3>
-        {this.props.cheese.name}
+        {cheese.name}
       </h3>
     );
   }
