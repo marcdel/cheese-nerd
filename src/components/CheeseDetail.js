@@ -1,18 +1,24 @@
 /* @flow */
 import React, { Component } from "react";
 
-import Cheese from "./Cheese";
+import CheeseTitle from "./CheeseTitle";
+import CheeseImage from "./CheeseImage";
+import CheeseDescription from "./CheeseDescription";
 
 export default class CheeseDetail extends Component {
   render () {
-    var cheese = this.props.cheese;
+    const cheese = this.props.cheese;
 
     return (
-      <Cheese cheese={cheese} />
+      <div>
+        <CheeseTitle cheese={cheese} />
+        <CheeseImage cheese={cheese} />
+        <CheeseDescription cheese={cheese} />
+      </div>
     );
   }
 }
 
-Cheese.propTypes = {
+CheeseDetail.propTypes = {
   cheese: React.PropTypes.object.isRequired
 };
