@@ -5,7 +5,6 @@ import { Grid, Row, Col } from "react-bootstrap";
 
 import CheeseTitle from "./CheeseTitle";
 import CheeseImage from "./CheeseImage";
-import CheeseDescription from "./CheeseDescription";
 
 export default class CheeseList extends Component {
   constructor() {
@@ -23,7 +22,6 @@ export default class CheeseList extends Component {
         <Link to={`/cheese/${key}`}>
           <CheeseImage cheese={cheese} />
         </Link>
-        <CheeseDescription cheese={cheese} />
       </ Col>
     );
   }
