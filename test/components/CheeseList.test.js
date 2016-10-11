@@ -11,6 +11,12 @@ describe("components/CheeseList", () => {
       image : 'image.jpg',
       desc : 'Description 1',
       rating : 10
+    },
+    cheese2 : {
+      name : 'Cheese 2',
+      image : 'image.jpg',
+      desc : 'Description 2',
+      rating : 10
     }
   };
 
@@ -20,17 +26,10 @@ describe("components/CheeseList", () => {
     expect(wrapper).to.exist;
   });
 
-  it("renders cheese title with cheese prop", () => {
+  it("renders each cheese passed in", () => {
     const subject = <CheeseList cheeses={testCheeses} />;
     const wrapper = shallow(subject);
     expect(wrapper).to.exist;
-    expect(wrapper.find('CheeseTitle').props().cheese).to.equal(testCheeses['cheese1']);
-  });
-
-  it("renders cheese image with cheese prop", () => {
-    const subject = <CheeseList cheeses={testCheeses} />;
-    const wrapper = shallow(subject);
-    expect(wrapper).to.exist;
-    expect(wrapper.find('CheeseImage').props().cheese).to.equal(testCheeses['cheese1']);
+    expect(wrapper.find('Card')).to.have.length(2);
   });
 });

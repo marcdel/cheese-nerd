@@ -13,29 +13,15 @@ describe("components/CheeseDetail", () => {
   };
 
   it("renders without an issue", () => {
-    const subject = <CheeseDetail />;
+    const subject = <CheeseDetail cheese={testCheese} />;
     const wrapper = shallow(subject);
     expect(wrapper).to.exist;
   });
 
-  it("renders cheese title with cheese prop", () => {
+  it("renders cheese image", () => {
     const subject = <CheeseDetail cheese={testCheese} />;
     const wrapper = shallow(subject);
     expect(wrapper).to.exist;
-    expect(wrapper.find('CheeseTitle').props().cheese).to.equal(testCheese);
-  });
-
-  it("renders cheese image with cheese prop", () => {
-    const subject = <CheeseDetail cheese={testCheese} />;
-    const wrapper = shallow(subject);
-    expect(wrapper).to.exist;
-    expect(wrapper.find('CheeseImage').props().cheese).to.equal(testCheese);
-  });
-
-  it("renders cheese description with cheese prop", () => {
-    const subject = <CheeseDetail cheese={testCheese} />;
-    const wrapper = shallow(subject);
-    expect(wrapper).to.exist;
-    expect(wrapper.find('CheeseDescription').props().cheese).to.equal(testCheese);
+    expect(wrapper.find('img').props().src).to.equal(testCheese.image);
   });
 });
