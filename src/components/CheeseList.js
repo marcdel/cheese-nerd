@@ -17,15 +17,15 @@ export default class CheeseList extends Component {
     const cheese = this.props.cheeses[key];
 
     return (
-      <Col key={key} sm={6} md={6}>
-        <Link to={`/cheese/${key}`}>
-          <Card>
+      <Col key={key} sm={6} md={4} style={styles.col}>
+        <Card>
+          <Link to={`/cheese/${key}`}>
             <CardMedia
               overlay={<CardTitle title={cheese.name} subtitle="Overlay subtitle" />} >
               <img src={cheese.image} />
             </CardMedia>
-          </Card>
-        </Link>
+          </Link>
+        </Card>
       </Col>
     );
   }
@@ -40,6 +40,12 @@ export default class CheeseList extends Component {
     );
   }
 }
+
+const styles = {
+  col: {
+    margin: '0 2rem 2rem 2rem'
+  }
+};
 
 CheeseList.propTypes = {
   cheeses: React.PropTypes.object.isRequired,
