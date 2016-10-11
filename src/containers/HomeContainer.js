@@ -39,12 +39,12 @@ export class HomeContainer extends Component {
   }
 }
 
-export const topCheeseFilter = (cheeses) => {
+export const topCheeseFilter = (cheeses, count) => {
   return Object.keys(cheeses).sort(function(a, b){
     a = cheeses[a].rating;
     b = cheeses[b].rating;
     return ((a > b) ? -1 : ((a < b) ? 1 : 0));
-  }).slice(0, 4).reduce(function(result, key){
+  }).slice(0, count).reduce(function(result, key){
     result[key] = cheeses[key];
     return result;
   }, {});
@@ -52,7 +52,7 @@ export const topCheeseFilter = (cheeses) => {
 
 const mapStateToProps = (state) => {
   return {
-    cheeses: topCheeseFilter(state.app.cheeses)
+    cheeses: topCheeseFilter(state.app.cheeses, 6)
   }
 }
 

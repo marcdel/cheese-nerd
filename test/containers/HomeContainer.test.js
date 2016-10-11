@@ -62,8 +62,8 @@ describe("containers/HomeContainer", () => {
     expect(wrapper.find('Home').props().cheeses).to.equal(testCheeses);
   });
 
-  it("top cheese filter sorts by rating and returns top 4", () => {
-    const filteredCheeses = topCheeseFilter(testCheeses);
+  it("top cheese filter sorts by rating and returns top cheeses", () => {
+    const filteredCheeses = topCheeseFilter(testCheeses, 4);
     const expectedCheeses = ['cheese1', 'cheese2', 'cheese3', 'cheese4'];
 
     expect(Object.keys(filteredCheeses)).to.deep.equal(expectedCheeses);
