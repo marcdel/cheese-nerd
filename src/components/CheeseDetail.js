@@ -1,20 +1,25 @@
 /* @flow */
 import React, { Component } from "react";
 
-import CheeseTitle from "./CheeseTitle";
-import CheeseImage from "./CheeseImage";
-import CheeseDescription from "./CheeseDescription";
+import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
+import FlatButton from 'material-ui/FlatButton';
 
 export default class CheeseDetail extends Component {
   render () {
     const cheese = this.props.cheese;
 
     return (
-      <div>
-        <CheeseTitle cheese={cheese} />
-        <CheeseImage cheese={cheese} />
-        <CheeseDescription cheese={cheese} />
-      </div>
+      <Card>
+        <CardMedia>
+          <img src={cheese.image} />
+        </CardMedia>
+        <CardTitle title={cheese.name} />
+        <CardText>{cheese.desc}</CardText>
+        <CardActions>
+          <FlatButton label="Action1" />
+          <FlatButton label="Action2" />
+        </CardActions>
+      </Card>
     );
   }
 }

@@ -2,9 +2,9 @@
 import React, { Component } from "react";
 import { Link } from 'react-router'
 import { Grid, Row, Col } from "react-bootstrap";
-
-import CheeseTitle from "./CheeseTitle";
-import CheeseImage from "./CheeseImage";
+import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
+import FlatButton from 'material-ui/FlatButton';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 export default class CheeseList extends Component {
   constructor() {
@@ -17,12 +17,16 @@ export default class CheeseList extends Component {
     const cheese = this.props.cheeses[key];
 
     return (
-      <Col xs={6} md={6} key={key}>
-        <CheeseTitle cheese={cheese} />
+      <Col key={key} sm={6} md={6}>
         <Link to={`/cheese/${key}`}>
-          <CheeseImage cheese={cheese} />
+          <Card>
+            <CardMedia
+              overlay={<CardTitle title={cheese.name} subtitle="Overlay subtitle" />} >
+              <img src={cheese.image} />
+            </CardMedia>
+          </Card>
         </Link>
-      </ Col>
+      </Col>
     );
   }
 
