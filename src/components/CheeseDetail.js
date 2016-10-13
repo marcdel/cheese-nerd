@@ -9,7 +9,7 @@ export default class CheeseDetail extends Component {
     const cheese = this.props.cheese;
 
     return (
-      <Card>
+      <Card style={styles.card}>
         <CardMedia>
           <img src={cheese.image} />
         </CardMedia>
@@ -23,6 +23,16 @@ export default class CheeseDetail extends Component {
     );
   }
 }
+
+const styles = {
+  card: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+    minWidth: '300px',
+    maxWidth: '1200px'
+  }
+};
 
 CheeseDetail.propTypes = {
   cheese: React.PropTypes.object.isRequired
